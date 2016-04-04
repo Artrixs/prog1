@@ -1,7 +1,7 @@
 /* Lezione 3 - Esercizio 4*/
 
 #include<stdio.h>
-#include"..\Prog1\IO.h"
+#include"..\lib\IO.h"
 
 int main(void)
 {

@@ -2,7 +2,7 @@
 
 #include<stdio.h>
 #include<ctype.h>
-#include"..\Prog1\IO.h"
+#include"..\lib\IO.h"
 
 int main(void)
 {
