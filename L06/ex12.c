@@ -10,7 +10,9 @@ void prodMatrix(int n, double (*A)[n], double (*B)[n], double (*R)[n]);
 void prodScal(int n, double (*A)[n], double r, double (*R)[n]);
 
   //Dimensione matrici
-  int n = leggi_int("Inserisci la dimensione desiderata: ");
+  int n;
+  while((n=leggi_int("Inserisci la dimensione desiderata: "))<=0)
+    printf("La dimensione deve essere maggiore di 0\n");
 
   double A[n][n], B[n][n], C[n][n],r;
   // legge A

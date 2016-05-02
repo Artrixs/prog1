@@ -9,7 +9,9 @@ void prodMatrix(int n, double (*A)[n], double (*B)[n], double (*R)[n]);
 void copyMatrix(int n, double (*A)[n], double (*B)[n]);
 
   //Dimensione matrici
-  int n = leggi_int("Questo programma calcola A^m, inserisci la dimA : ");
+  int n;
+  while((n=leggi_int("Questo programma calcola A^m, inserisci la dimA : "))<=0)
+    printf("La dimensione deve essere maggiore di 0\n");
 
   double A[n][n], Z[n][n], Y[n][n];
   int m;

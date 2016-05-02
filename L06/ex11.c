@@ -14,7 +14,9 @@ int main(void){
 
 
   //Chiede con che dimensione lavorare
-  int n=leggi_int("Inserisci la dimensione delle matrici\n>");
+  int n;
+  while((n=leggi_int("Inserisci la dimensione delle matrici\n>"))<=0)
+    printf("La dimensione deve essere maggiore di 0\n");
 
   double A[n][n], B[n][n],r;
   int inizA=0, inizB=0,inizr=0;

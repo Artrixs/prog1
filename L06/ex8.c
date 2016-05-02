@@ -5,7 +5,10 @@
 int main(void){
 
   //Leggiamo le matrici:
-  int n=leggi_int("Inserisci la dimensione delle matrici: ");
+  int n;
+  while((n=leggi_int("Inserisci la dimensione delle matrici: "))<=0)
+    printf("La dimensione deve essere maggiore di 0\n");
+
   printf("Ora inserisci i valori della prima matrice per riga\n");
   double M[n][n];
 

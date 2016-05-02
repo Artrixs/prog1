@@ -6,7 +6,10 @@ int main(void){
   void prodMatrici(int n, double (*A)[n],double (*B)[n],double (*C)[n]);
 
   //Leggiamo la matrice:
-  int n=leggi_int("Inserisci la dimensione della matrice: ");
+  int n;
+  while((n=leggi_int("Inserisci la dimensione della matrice: "))<=0)
+    printf("La dimensione deve essere maggiore di 0\n");
+
   printf("Ora inserisci i valori della prima matrice per riga\n");
   double M[n][n];
 
