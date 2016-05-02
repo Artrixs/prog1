@@ -70,8 +70,7 @@ char menu(void){
   printf("4.\tVisualizza A,B ed r.\n5.\tTrasposta di A.\n6.\trA.\n7.\tA+B\n8.\tAB.\n");
   printf("9.\tScambia A e B.\nX.\tEsci.\n>");
   char c=getchar();
-  if(c=!'\n')
-  getchar();
+  while(getchar()!='\n');  //elimina tutti i dati in eccesso
   return c;
 }
 
