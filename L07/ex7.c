@@ -2,38 +2,37 @@
 #include <stdio.h>
 
 int main(void){
-	void clean(char *s, char *t,char *u);
-	char s[10241],t[1024],u[1024];
-	
-	
+	char * clean(char *s, char *t,char *u);
+	char s[BUFSIZ],t[BUFSIZ],u[BUFSIZ];
+
+
 	printf("Inserisci una stringa:\n");
-	if(fgets(s,1024,stdin)==NULL){
+	if(fgets(s,BUFSIZ,stdin)==NULL){
 		printf("Errore di input!\n");
 		return -1;
 	}
-	
+
 	printf("Inserisci la stringa dei caratteri che vuoi eliminare:\n");
-	if(fgets(u,1024,stdin)==NULL){
+	if(fgets(u,BUFSIZ,stdin)==NULL){
 		printf("Errore di input.\n");
 		return -1;
 	}
-	
-	clean(s,t,u);
-	printf("%s",t);
+
+	printf("%s",clean(s,t,u));
 	return 0;
 }
 
-
-void clean(char *s,char *t, char *u){
-	
+/*Elimina dalla stringa s tutti i caratteri che sono presenti in u,
+*salva il risultato in t, ritorna un puntatore a t*/
+char * clean(char *s,char *t, char *u){
 	int k=0;
-	for(k=0;s[k]!='\0';k++)
+	for(k=0;s[k]!='\0';k++)//Effettua una copia di si su t (non posso effettuare la computazione su s)
 		t[k]=s[k];
 	t[k]='\0';
 
 	for(int j=0;u[j]!='\n';j++){
 	k=0;
-	for(int i=0;s[i]!='\0';i++)
+	for(int i=0;t[i]!='\0';i++)
 		if(t[i]!=u[j]){
 			t[k]=t[i];
 			k++;
@@ -41,5 +40,5 @@ void clean(char *s,char *t, char *u){
 	t[k]='\0';
 	}
 
-	return;
+	return t;
 }
